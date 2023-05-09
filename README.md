@@ -31,7 +31,7 @@ This is an implementation of a Ukrainian phonetic keyboard that can be used with
 
   Type the first character (<kbd>й</kbd> or <kbd>/</kbd>) twice to escape the combination input. For example, if you want to enter the text 'йе', type <kbd>й</kbd> <kbd>й</kbd> <kbd>е</kbd>.
 
-* Type <kbd>\`</kbd> (backtick) after a vowel to add an accent mark. You remove it just by pressing <kbd>BACKSPACE</kbd>. Or, you can press any other keys (<kbd>SHIFT</kbd> for example) after a vowel then press <kbd>\`</kbd> to enter a backtick as it is.
+* Type <kbd>\`</kbd> (backtick) after a vowel to add an accent mark. If you don't want it, you can remove it just by pressing <kbd>BACKSPACE</kbd>. Or, you can press any other keys (<kbd>SHIFT</kbd> for example) after a vowel then press <kbd>\`</kbd> to enter the backtick as it is.
 
 ## Notes
 
