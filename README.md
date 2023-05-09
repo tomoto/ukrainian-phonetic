@@ -39,11 +39,13 @@ This is an implementation of a Ukrainian phonetic keyboard that can be used with
 
 * Some antivirus software has a web browser protection feature that will prevent external tools like AutoHotKey to pick up the key information typed in browsers. If such features are enabled, this keyboard will not work with your browsers.
 
-## What is special with this layout?
+## Why did I create this?
 
-The design goal of this layout is to provide an easiest possible method for the learners to input Ukrainian into web browsers, text editors, office applications, etc., with minimal learning effort and disruption.
+If you install the Ukrainian language support on Windows 11, you can use the Ukrainian standard layout (http://kbdlayout.info/KBDUR1/) but it is too difficult for the learners. You sure want to spend your time to study the language, not the keyboard.
 
-To achieve that, we avoid assigning new characters to non-alphabetical keys and changing the position or functionality of existing non-alphabetical symbols as much as possible. Also, we avoid using the ALT key because it is hard to press and is often used for editor commands (at least for me).
+So, I aimed to create a tool specifically for English (US ASCII) keyboard users, to provide the easiest and most natual method for them to input Ukrainian in web browsers, text editors, office applications, without compromising the usual experience of using their familiar English keyboard.
+
+To achieve that, I have avoided assigning new characters to non-alphabetical keys and changing the position or functionality of existing non-alphabetical symbols as much as possible. Also, I have avoided using the ALT key because it is hard to press and is often used for editor commands (at least to me). Instead, I adopted combination keys (such as <kbd>й</kbd>) to input extended characters. While having disadvantages such as an increased number of types, it would minimize the number of things you need to learn and changes in your experience.
 
 # ウクライナ語Phoneticキーボード(学習者向け)
 
@@ -60,7 +62,7 @@ AutoHotKey V2で使えるウクライナ語Phoneticキーボードの実装で�
 
 * <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>SPACE</kbd> でウクライナ語入力モードをon/offできる。
 
-* レイアウトは冒頭の図を参照。下記の表の文字は <kbd>й</kbd> または <kbd>/</kbd> との組み合わせで入力する。例えば 'є' を入力するには <kbd>й</kbd> に続けて <kbd>е</kbd> をタイプする。
+* キー配列は冒頭の図を参照。下記の表の文字は <kbd>й</kbd> または <kbd>/</kbd> との組み合わせで入力する。例えば 'є' を入力するには <kbd>й</kbd> に続けて <kbd>е</kbd> をタイプする。
 
   |文字|組み合わせ|
   |---|---|
@@ -82,12 +84,14 @@ AutoHotKey V2で使えるウクライナ語Phoneticキーボードの実装で�
 
 ## 注意
 
-* US ASCIIキーボードを前提としており、日本語JISなど他のレイアウトではうまく動作しない可能性がある。
+* US ASCIIキーボードを前提としており、日本語JISなど他のキー配列ではうまく動作しない可能性がある。
 * ウイルス対策ソフトのブラウザ保護機能には、ブラウザで入力されたキー情報をAutoHotKeyのような外部ツールから見えなくするものがあり、このような機能が有効になっているとブラウザ上で本キーボードは正しく動作しない可能性がある。
 * 日本語IMEと本キーボードを同時にオンにすると正しく動作しないことがある。
 
-## 本レイアウトの特徴
+## なぜこんなものを作ったのか
 
-英語(US ASCII)キーボードを使いこなしているウクライナ語学習者が、Webブラウザ・テキストエディタ・オフィスアプリケーション等にウクライナ語を入力する際に、最小限の学習コストで最もスムーズに入力できるツールを目指しています。
+Windows 11にウクライナ語をインストールすると、ウクライナ語標準配列(http://kbdlayout.info/KBDUR1/)のキーボードが使えるようになりますが、これは日本語かな配列のようなもので習熟するのが大変です。勉強のためにウクライナ語を入力したいだけであれば労力に見合いません。
 
-そのため、新たなキー配置を覚えなくて済むよう、アルファベット以外のキーに新たに文字を割り当てたり、既存の記号の位置や機能を変更することはなるべく避けています。また、(少なくとも私にとっては)ALTキーは押しにくく、またエディタのコマンドで使うことが多いため、使用を避けています。
+そこで、英語(US ASCII)キーボード使用者を対象に、Webブラウザ・テキストエディタ・オフィスアプリケーション等にウクライナ語を最も簡単に・違和感なく(普段の英語キーボードの使用感を損なわずに)入力できるツールを目指して作りました。
+
+新たなキー配置を覚えなくて済むよう、アルファベット以外のキーに新たに文字を割り当てたり、既存の記号の位置や機能を変更することはなるべく避けています。また、(少なくとも私にとっては)ALTキーは押しにくく、またエディタのコマンドで使うことが多いため、使用を避けています。代わりに <kbd>й</kbd> などを使った組み合わせにより追加の文字を入力する方式を採用しており、これはタイプ数が増える等の欠点がありますが、新たに覚えることが少なくて済む、普段の使用感が変わらずに済む、という特長があります。
