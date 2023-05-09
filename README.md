@@ -43,7 +43,7 @@ This is an implementation of a Ukrainian phonetic keyboard that can be used with
 
 ## Why did I create this?
 
-If you install the Ukrainian language support on Windows 11, you can use the Ukrainian standard layout (http://kbdlayout.info/KBDUR1/) but it is too difficult for the learners. You sure want to spend your time to study the language, not the keyboard.
+If you install the Ukrainian language support on Windows 11, you can use the [Ukrainian standard layout](http://kbdlayout.info/KBDUR1/) but it is too difficult for the learners. You sure want to spend your time to study the language, not the keyboard.
 
 So, I aimed to create a tool specifically for English (US ASCII) keyboard users, to provide the easiest and most natual method for them to input Ukrainian in web browsers, text editors, office applications, without compromising the usual experience of using their familiar English keyboard.
 
