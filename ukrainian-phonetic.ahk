@@ -16,29 +16,29 @@ ih.Wait()
 
 OnKeyDown(ih, vk, sc)
 {
-	vksc := Format("vk{:x}sc{:x}", vk, sc)
-	key := GetKeyName(vksc)
+  vksc := Format("vk{:x}sc{:x}", vk, sc)
+  key := GetKeyName(vksc)
 
-	if (key != "" and RegExMatch(key, "i)^([LR]Shift|CapsLock)$") == 0)  {
-		global PriorKey
-		PriorKey := key
-		; FlashToolTip(Format("OnKeyDown {} {} {}", PriorKey, vk, sc))
-	}
+  if (key != "" and RegExMatch(key, "i)^([LR]Shift|CapsLock)$") == 0)  {
+    global PriorKey
+    PriorKey := key
+    ; FlashToolTip(Format("OnKeyDown {} {} {}", PriorKey, vk, sc))
+  }
 }
 
 ToggleEnabled()
 {
-	global Enabled
-	Enabled := !Enabled
+  global Enabled
+  Enabled := !Enabled
 
-	global IgnoreShift
-	IgnoreShift := false
+  global IgnoreShift
+  IgnoreShift := false
 
-	global PriorKey
-	PriorKey := ""
+  global PriorKey
+  PriorKey := ""
 
   modeText := Enabled ? "ON" : "OFF"
-	FlashToolTip("Ukrainian mode " . modeText)
+  FlashToolTip("Ukrainian mode " . modeText)
 }
 
 FlashToolTip(text)
@@ -48,31 +48,31 @@ FlashToolTip(text)
 }
 
 RemoveToolTip() {
-	ToolTip()
+  ToolTip()
 }
 
 Inject(translatedKey, shiftedTranslations := Map())
 {
-	global PriorKey
-	global IgnoreShift
+  global PriorKey
+  global IgnoreShift
 
-	; FlashToolTip(Format("Inject {}", PriorKey))
-	shiftedTranslatedKey := shiftedTranslations.Has(PriorKey) ? shiftedTranslations[PriorKey] : ""
-	if (!IgnoreShift and shiftedTranslatedKey != "") {
-		Send("{BS}" . Capitalize(shiftedTranslatedKey))
-		IgnoreShift := true
-	} else {
-		Send(Capitalize(translatedKey))
-		IgnoreShift := false
-	}
+  ; FlashToolTip(Format("Inject {}", PriorKey))
+  shiftedTranslatedKey := shiftedTranslations.Has(PriorKey) ? shiftedTranslations[PriorKey] : ""
+  if (!IgnoreShift and shiftedTranslatedKey != "") {
+    Send("{BS}" . Capitalize(shiftedTranslatedKey))
+    IgnoreShift := true
+  } else {
+    Send(Capitalize(translatedKey))
+    IgnoreShift := false
+  }
 
-	PriorKey := SubStr(A_ThisHotkey, -1)
-	; FlashToolTip(Format("Inject {}", PriorKey))
+  PriorKey := SubStr(A_ThisHotkey, -1)
+  ; FlashToolTip(Format("Inject {}", PriorKey))
 }
 
 Capitalize(c) {
-	capital := GetKeyState("Shift", "P") != GetKeyState("CapsLock", "T")
-	return capital ? StrUpper(c) : c
+  capital := GetKeyState("Shift", "P") != GetKeyState("CapsLock", "T")
+  return capital ? StrUpper(c) : c
 }
 
 ; Change here if you want to customize the toggle shortcut
@@ -165,11 +165,11 @@ z::Inject("з", Map("/", "ж"))
 
 `::
 {
-	if (RegExMatch(A_PriorKey, "^[aeiouyq]$") > 0) {
-		Inject(Acc)
-	} else {
-		Inject("``")
-	}
+  if (RegExMatch(A_PriorKey, "^[aeiouyq]$") > 0) {
+    Inject(Acc)
+  } else {
+    Inject("``")
+  }
 }
 
 ; '::Inject("'", Map("/", Acc))
