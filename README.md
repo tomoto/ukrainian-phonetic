@@ -19,19 +19,19 @@ This is an implementation of a Ukrainian phonetic keyboard that can be used with
 
   |Character|Combination|
   |---|---|
-  |`я`|<kbd>й</kbd> <kbd>а</kbd>|
-  |`є`|<kbd>й</kbd> <kbd>е</kbd>|
-  |`ї`|<kbd>й</kbd> <kbd>і</kbd>|
-  |`ю`|<kbd>й</kbd> <kbd>у</kbd>|
-  |`ь`|<kbd>й</kbd> <kbd>;</kbd>|
-  |`ґ`|<kbd>/</kbd> <kbd>г</kbd>|
-  |`щ`|<kbd>/</kbd> <kbd>ш</kbd>|
-  |`ж`|<kbd>/</kbd> <kbd>з</kbd>|
-  |`«`|<kbd>/</kbd> <kbd><</kbd>|
-  |`»`|<kbd>/</kbd> <kbd>></kbd>|
-  |`–` (dash)|<kbd>/</kbd> <kbd>-</kbd>|
+  |я|<kbd>й</kbd> <kbd>а</kbd>|
+  |є|<kbd>й</kbd> <kbd>е</kbd>|
+  |ї|<kbd>й</kbd> <kbd>і</kbd>|
+  |ю|<kbd>й</kbd> <kbd>у</kbd>|
+  |ь|<kbd>й</kbd> <kbd>;</kbd>|
+  |ґ|<kbd>/</kbd> <kbd>г</kbd>|
+  |щ|<kbd>/</kbd> <kbd>ш</kbd>|
+  |ж|<kbd>/</kbd> <kbd>з</kbd>|
+  |«|<kbd>/</kbd> <kbd><</kbd>|
+  |»|<kbd>/</kbd> <kbd>></kbd>|
+  |– (dash)|<kbd>/</kbd> <kbd>-</kbd>|
 
-  To escape the combination input, type the first character (<kbd>й</kbd> or <kbd>/</kbd>) twice. For example, if you want to enter the text `йе`, type <kbd>й</kbd> <kbd>й</kbd> <kbd>е</kbd>. 
+  To escape the combination input, type the first character (<kbd>й</kbd> or <kbd>/</kbd>) twice. For example, if you want to enter the text 'йе', type <kbd>й</kbd> <kbd>й</kbd> <kbd>е</kbd>. 
 
 * Type <kbd>\`</kbd> (backtick) after a vowel to add an accent mark. If you don't want it, you can remove it just by pressing <kbd>BACKSPACE</kbd>. Or, you can press any other keys (<kbd>SHIFT</kbd> for example) after a vowel then press <kbd>\`</kbd> to enter the backtick as it is.
 
