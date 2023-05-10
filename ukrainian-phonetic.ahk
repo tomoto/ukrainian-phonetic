@@ -16,11 +16,12 @@ ih.Wait()
 
 OnKeyDown(ih, vk, sc)
 {
+  global PriorKey
+
   vksc := Format("vk{:x}sc{:x}", vk, sc)
   key := GetKeyName(vksc)
 
-  if (key != "" and RegExMatch(key, "i)^([LR]Shift|CapsLock)$") == 0)  {
-    global PriorKey
+  if (key != "" and RegExMatch(key, "i)^([LR]Shift|CapsLock|Backspace)$") == 0)  {
     PriorKey := key
     ; FlashToolTip(Format("OnKeyDown {} {} {}", PriorKey, vk, sc))
   }
@@ -29,12 +30,11 @@ OnKeyDown(ih, vk, sc)
 ToggleEnabled()
 {
   global Enabled
-  Enabled := !Enabled
-
   global IgnoreShift
-  IgnoreShift := false
-
   global PriorKey
+
+  Enabled := !Enabled
+  IgnoreShift := false
   PriorKey := ""
 
   modeText := Enabled ? "ON" : "OFF"
@@ -56,23 +56,31 @@ Inject(translatedKey, shiftedTranslations := Map())
   global PriorKey
   global IgnoreShift
 
-  ; FlashToolTip(Format("Inject {}", PriorKey))
   shiftedTranslatedKey := shiftedTranslations.Has(PriorKey) ? shiftedTranslations[PriorKey] : ""
   if (!IgnoreShift and shiftedTranslatedKey != "") {
-    Send("{BS}" . Capitalize(shiftedTranslatedKey))
+    SendInput("{BS}" . Capitalize(shiftedTranslatedKey))
     IgnoreShift := true
   } else {
-    Send(Capitalize(translatedKey))
+    SendInput(Capitalize(translatedKey))
     IgnoreShift := false
   }
 
   PriorKey := SubStr(A_ThisHotkey, -1)
-  ; FlashToolTip(Format("Inject {}", PriorKey))
 }
 
 Capitalize(c) {
   capital := GetKeyState("Shift", "P") != GetKeyState("CapsLock", "T")
   return capital ? StrUpper(c) : c
+}
+
+InjectProxy(translatedKey)
+{
+  global PriorKey
+  global IgnoreShift
+
+  SendInput(translatedKey)
+  PriorKey := A_ThisHotkey
+  IgnoreShift := false
 }
 
 ; Change here if you want to customize the toggle shortcut
@@ -161,11 +169,11 @@ z::Inject("з", Map("/", "ж"))
 /::Inject("/", Map("/", "/"))
 
 `;::Inject(";", Map("j", "ь"))
-+;::Inject(":", Map("j", "ь"))
++;::Inject("+;", Map("j", "ь"))
 
 `::
 {
-  if (RegExMatch(A_PriorKey, "^[aeiouyq]$") > 0) {
+  if (RegExMatch(PriorKey, "^[aeiouyq]$") > 0) {
     Inject(Acc)
   } else {
     Inject("``")
@@ -176,3 +184,5 @@ z::Inject("з", Map("/", "ж"))
 <::Inject("<", Map("/", "«"))
 >::Inject(">", Map("/", "»"))
 -::Inject("-", Map("/", "–"))
+
+BackSpace::InjectProxy("{BS}") ; Proxy to record BS to PriorKey
