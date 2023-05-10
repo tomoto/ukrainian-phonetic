@@ -33,11 +33,11 @@ This is an AutoHotKey V2 script to implement a Ukrainian phonetic keyboard. It i
 
   To escape the combination input, type the first character (<kbd>й</kbd> or <kbd>/</kbd>) twice. For example, if you want to enter the text 'йе', type <kbd>й</kbd> <kbd>й</kbd> <kbd>е</kbd>. 
 
-* Type <kbd>\`</kbd> (backtick) after a vowel to add an accent mark. If you don't want it, you can remove it just by pressing <kbd>BACKSPACE</kbd>. Or, you can press any other keys (<kbd>SHIFT</kbd> for example) after a vowel then press <kbd>\`</kbd> to enter the backtick as it is.
+* Type <kbd>\`</kbd> (backtick) after a vowel to add an accent mark. If you don't want it, you can remove it just by pressing <kbd>BACKSPACE</kbd>.
 
 ## Notes
 
-* This is designed for US ASCII keyboards. It may not work with other layouts.
+* This is tested with the keyboards with US ASCII layout and Japanese JIS layout. It may not work with other layouts.
 
 * Some antivirus software has a web browser protection feature that will prevent external tools like AutoHotKey to pick up the key information typed in browsers. If such features are enabled, this keyboard will not work with your browsers.
 
